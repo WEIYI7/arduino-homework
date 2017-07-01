@@ -6,7 +6,7 @@ void setup() {
   // put your setup code here, to run once:
  Serial.begin(9600);
 
-
+pinMode(13, OUTPUT);
 pinMode(TrigPin, OUTPUT);
 pinMode(EchoPin, INPUT);
 }
@@ -23,9 +23,11 @@ digitalWrite(TrigPin, LOW);
   cm=(int(cm*100))/100;
    if (cm <= 10){
    r=0;
+     digitalWrite(13,HIGH);
    }
     else{
     r=1;
+      digitalWrite(13,LOW);
     }
    Serial.print(r);      
     
